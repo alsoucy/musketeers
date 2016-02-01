@@ -24,6 +24,6 @@ for(var i = 0; randomNums.length < 30; i++) {
 };
 
 //when I run above in the console and then call the randomNums array it brings back the same array over and over instead of bringing a new array every time. What am I doing wrong?
-Math.min(parseInt(randomNums));
+Math.min.apply(Math.(parseInt(randomNums[])));
 Math.max(parseInt(randomNums));
 //when I run the above in the console, both bring up first number in the array
