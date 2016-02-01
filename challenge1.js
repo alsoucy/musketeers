@@ -1,9 +1,7 @@
 // //psuedo code:
 // create random number between 1 and 1000
-// if randomNums.length is under 30, create another random number,
-// else stop creating randomNums
-// return array in format no1| no2| no3|...
 // push random number into an array
+// for array length less than 30 numbers, create another random number between 1-1000
 // find min number in array
 // find max number in the array
 
@@ -20,6 +18,11 @@ function rn(min, max) {
 for(var i = 0; randomNums.length < 30; i++){
   randomNums.push(rn(1, 1000))
 };
+
+for(var i = 0; randomNums.length < 30; i++) {
+  console.log(randomNums[i] + '|');
+};
+
 //when I run above in the console and then call the randomNums array it brings back the same array over and over instead of bringing a new array every time. What am I doing wrong?
 Math.min(parseInt(randomNums));
 Math.max(parseInt(randomNums));
