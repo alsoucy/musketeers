@@ -74,8 +74,8 @@ for (var j = 0; j < array.length; j+=1) {
  var myString = 'How do you know the ocean greets you?'
  var arr = myString.split(" ");
  console.log(arr);
+ var longword = arr[0];
  for (var i = 0; i <= arr.length-1; i++){
-   var longword = arr[0];
     if(arr[i].length > longword.length){
       longword = arr[i];
     }
