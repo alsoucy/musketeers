@@ -10,20 +10,20 @@
 // fibo(n) = fibo(n - 1) + fibo(n - 2)
 
 // function fibo(11) = 55
-// fibo[0] = 0
-// fibo[1] = 1
-// fibo[2] = 1
-// fibo[3] = 2
-// fibo[4] = 3
-// fibo[5] = 5
-// fibo[6] = 8
-// fibo[7] = 13
-// fibo[8] = 21
-// fibo[9] = 34
-// fibro[10] = 55
-// fibro[11] = 89
-// fibro[12] = 144
-
+// fibo[0] = 0  1   //  0
+// fibo[1] = 1  2   //  1
+// fibo[2] = 1  3   //  0 + 1 = 1
+// fibo[3] = 2  4   //  1 + 1 = 2
+// fibo[4] = 3  5   //  2 + 1 = 3
+// fibo[5] = 5  6   //  3 + 2 = 5
+// fibo[6] = 8  7   //  5 + 3 = 8
+// fibo[7] = 13 8   //  8 + 5 = 13
+// fibo[8] = 21 9   //  13 + 8 = 21
+// fibo[9] = 34 10    //  21 + 13 = 34
+// fibro[10] = 55 11  //  34 + 21 = 55
+// fibro[11] = 89 12  //  55 + 34 = 89
+// fibro[12] = 144  13  // 89 + 55 = 144
+//below function returns incorrect result
   function fib1(n){
   var x = 0;
   var y = 1;
@@ -38,7 +38,7 @@
   return y;
 }
 console.log(fib1(10));
-
+//below function works
 function fib(n) {
   var result = 0;
   if (n <= 2){
@@ -47,4 +47,4 @@ function fib(n) {
   result = fib(n-1) + fib(n-2);
   return result;
 };
-console.log(fib(7));
+console.log(fib(11));
