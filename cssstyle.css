@@ -1,0 +1,28 @@
+.divone {
+  background-color: red;
+  height:100px;
+  width: 100px;
+}
+
+.divtwo {
+  background-color: blue;
+  height:100px;
+  width: 100px;
+}
+
+.divthree {
+  background-color: orange;
+  height:100px;
+  width: 100px;
+}
+
+.divfour {
+  background-color: green;
+  height:100px;
+  width: 100px;
+}
+
+.container1 {
+  display: flex;
+  justify-content: flex-end;
+}
