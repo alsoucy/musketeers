@@ -1,5 +1,6 @@
 .divone {
   background-color: red;
+  display: flex;
   height:100px;
   width: 100px;
 }
@@ -21,8 +22,20 @@
   height:100px;
   width: 100px;
 }
+.container3 {
+  background-color: purple;
+  display:flex;
+  justify-content: center;
+}
 
 .container1 {
+  background-color: yellow;
+  width: 85%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+}
+
+.container2 {
+  background-color: pink;
+  display: flex;
 }
