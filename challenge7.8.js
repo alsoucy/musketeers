@@ -9,15 +9,25 @@ var unkFunc = function(str, amount) {
     for (var i = 0; i < str.length; i ++) {
         var c = str[i];
         if (c.match(/[a-z]/i)) {
-            //(/)
+            //checks to see if str is betw a-z not case sensitive
+            //(/pattern/modifiers;)
+            //i = modifies search to be case-insensitive
             var code = str.charCodeAt(i);
+            //str.charCodeAt(index) - returns a numerical value from ASCII table for str[i]
             if ((code >= 65) && (code <= 90))
-            //65 is first letter ASCII code ie A; 90 = Z
+            //if code is betw 65 and 90 (A-Z)
                 c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
+            //String.fromCharCode(65,66,67); // returns 'ABC'
+            //if code is 65, amount is 6: (65-65+6)%26 = 6 + 65 = 71 or G
             else if ((code >= 97) && (code <= 122))
+            //if code is betw 97 and 122(a-z)
                 c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
+            //if code is 115 and amount is 8: 115-97+8 = 26%26 = 0 +97 = 97 = a
+            //if code is 100 and amount is 8: 100-97+8 = 11%26 = 11+97 = 108 = l
         }
         output += c;
+        //cycle thru str and return the new character for every character in the string
+        //new character = ASCII code for original str at i + amount; if new number would be more than upper limit goes back to beginning of that section i.e. back to 65 or 97
     }
     return output;
 };
