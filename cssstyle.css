@@ -30,7 +30,7 @@
 
 .container1 {
   background-color: yellow;
-  width: 85%;
+  width: 84%;
   display: flex;
   justify-content: space-around;
 }
@@ -38,4 +38,5 @@
 .container2 {
   background-color: pink;
   display: flex;
+  justify-content: space-around;
 }
