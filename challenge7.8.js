@@ -3,7 +3,7 @@ var unkFunc = function(str, amount) {
 
     if (amount < 0)
         return unkFunc(str, amount + 26);
-
+          //if amount <0, set amount + 26
     var output = '';
 
     for (var i = 0; i < str.length; i ++) {
@@ -47,13 +47,6 @@ console.log(unkFunc("aimee", 6));
       //"ABC".charCodeAt(0) // returns 65
 // http://www.w3schools.com/jsref/jsref_obj_regexp.asp
 // http://www.w3schools.com/jsref/jsref_match.asp
-
-//Vocabulary OverView
-//charCodeAt: returns a numerical value from ASCII Table
-// /[a-z]/is a pattern and i modifies the search to be case-insensitive so that if str is typed in uppercase it will still be able to match it.
-//match this matches whatever is on the left side of it
-//String.fromCharCode() returns a string
-
 
 //challenge 8
 // Write 2 functions. First function will return true if a string contains spaces and false otherwise. The second function will replace all spaces in a string with '%20' and return the new string.
