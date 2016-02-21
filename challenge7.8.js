@@ -69,3 +69,10 @@ console.log(unkFunc("aimee", 6));
 // else {
 //     console.log("The string doesn't contain any spaces");
 // }
+
+var mystr = "Why did the scientist install a knocker on his door?";
+var spaces = false;
+if(mystr.indexOf(" ")> -1){
+  spaces = true;
+}
+console.log(spaces);
