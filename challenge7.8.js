@@ -71,24 +71,30 @@ console.log(unkFunc("aimee", 6));
 // }
 
 var mystr = "Why did the scientist install a knocker on his door?";
+// var mystr = "fhsflkhsdlkfjsdkljdslkflkfksdjflf?";
 // var spaces = false;
 // if(mystr.indexOf(" ")> -1){
 //   spaces = true;
 //   console.log(spaces);
 // }
 
+var spaces = false;
+var newString = ''
 function hasSpaces(array){
-  var spaces = false;
   if(array.indexOf(" ")> -1){
     spaces = true;
-    console.log(spaces);
+    newString = mystr.replace(/ /g,"%20");
+  } else {
+    console.log("the string has no spaces.");
   }
 }
 hasSpaces(mystr);
-if(spaces = true){
-  var newString = mystr.replace(/ /g,"%");
-  // return newString;
-  console.log(newString);
-} else {
-  console.log("The string has no spaces");
-}
+console.log(spaces);
+console.log(newString);
+// if(spaces = true){
+//   var newString = mystr.replace(/ /g,"%");
+//   // return newString;
+//   console.log(newString);
+// } else {
+//   console.log("The string has no spaces");
+// }
