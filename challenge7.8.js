@@ -71,8 +71,24 @@ console.log(unkFunc("aimee", 6));
 // }
 
 var mystr = "Why did the scientist install a knocker on his door?";
-var spaces = false;
-if(mystr.indexOf(" ")> -1){
-  spaces = true;
+// var spaces = false;
+// if(mystr.indexOf(" ")> -1){
+//   spaces = true;
+//   console.log(spaces);
+// }
+
+function hasSpaces(array){
+  var spaces = false;
+  if(array.indexOf(" ")> -1){
+    spaces = true;
+    console.log(spaces);
+  }
 }
-console.log(spaces);
+hasSpaces(mystr);
+if(spaces = true){
+  var newString = mystr.replace(/ /g,"%");
+  // return newString;
+  console.log(newString);
+} else {
+  console.log("The string has no spaces");
+}
