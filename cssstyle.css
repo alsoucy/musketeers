@@ -32,11 +32,14 @@
   background-color: yellow;
   width: 84%;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  /*justify-content: space-around;*/
 }
 
 .container2 {
   background-color: pink;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }

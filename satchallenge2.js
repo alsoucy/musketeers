@@ -29,7 +29,7 @@ if(counter === numberInRow){
 }
 return false;
 }
-console.log(heads());
+console.log("there were " + numberInRow + " tails in a row: " + heads());
 
 //Another method...
 function heads2(){
@@ -48,7 +48,7 @@ for(var i = 0; boolArray.length - numberInRow; i++){
   }
   return false;
 }
-console.log(heads2());
+console.log("there were " + numberInRow + " tails in a row: " + heads2());
 //
 // 2. Given an unsorted (if array is sorted it's easier b/c can use only 1 for loop using i < i+1 < i+2) array return whether an increasing subsequence of length 3 exists or not in the array.
 // The function should return true if there exists i, j, k such that arr[i] < arr[j] < arr[k] given 0 ≤ i < j < k ≤ n-1 else return false.
@@ -66,7 +66,7 @@ function seq(){
     for(var j = i+1; j < a.length -1; j++){
       for( var k = j+1; k < a.length; k++){
         if(a[i] < a[j] && a[j]< a[k]){  //if can only compare 2 at a time so need to use && to compare 3 elements
-          console.log(a[i]+', '+ a[j]+ ', ' + a[k]);
+          console.log('numbers from array a that meet criteria:' + a[i]+', '+ a[j]+ ', ' + a[k]);
           return true;
         }
       }
@@ -74,7 +74,7 @@ function seq(){
   }
   return false;
 }
-console.log(seq());
+console.log("There are numbers in array a that meet the criteria:" + seq());
 
 //another method is to sort array first
 var temp = 0;
@@ -87,15 +87,15 @@ for (var i = 0; i < a.length-2; i++){
     }
   }
 }
-console.log(a);
+console.log("array a sorted: " + a);
 //then use for loop to see if matches the condition if 0<i<j<k
 origArray=[5,4,7,9,2,1]
 function resortArray(n){
   var temp = 0;
   for (var i = 0; i < n.length-1; i++){
     for(var j = i+1; j < n.length; j++){  //j needs to be in relation to i
-      temp = n[i];
       if(n[i] > n[j]){
+        temp = n[i];
         n[i] = n[j];
         n[j] = temp;
 }
@@ -107,6 +107,7 @@ console.log(resortArray(origArray));
 function inSeq(array){
 for(var i = 0; i < array.length - 2; i++) {
   if(array[i] < array[i+1] && array[i+1]< array[i+2]){
+    console.log(array[i] +', '+ array[i+1] + ', ' + array[i+2]);
     return true;
   }
 }
@@ -114,7 +115,7 @@ return false;
 }
 console.log(inSeq(origArray));
 //try to combine sorting and inSeq functions?
-var testArray = [9,5,3,6,7,1];
+var testArray = [9,5,8,6,7,1];
 // console.log(resortArray(testArray)); //1,3,5,6,7,9
 console.log(inSeq(testArray));
 // 3. Given a string which contains only lowercase letters, remove duplicate letters so that every letter appears once and only once.
@@ -124,13 +125,73 @@ console.log(inSeq(testArray));
 // Given "bcabc"
 // Return "abc"
 // ascii codes for lowercase letters: 97-122
-// var string = ''
-// for (var i = 0; i < string.length; i++){
-//   if(string[i] = string[i]){
-//
-//   }
-// }
+var string = 'accdfkred';
+var newString = [];
+for (var i = 0; i < string.length; i++){
+  for(var j = i+1; j < string.length; j++ ){
+
+  }
+  if(string[i] !== string[j]){
+    newString.push(string[i]);
+  }
+}
+console.log(newString);
+
+//susan's solution
+var letterArray = ['b','c','a','b','c']
+letterArray.sort();
+function removeDup(arr) {
+  var obj = {};
+  var array2 = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (!(arr[i]in obj)) {
+      array2.push(arr[i]);
+      obj[arr[i]] = true;
+    }
+  }
+  return array2
+}
+console.log(removeDup(letterArray));
+
+var letterArray = ['b','c','a','b','c']
+
+function sort(array){
+  var temp = 0;
+for(var i = 0; i <= array.length-2; i++) {
+      for(var j = i+1; j <= array.length-1; j++) {
+          if(array[j] <  array[i]) {
+            temp = array[i];
+            array[i] = array[j];
+              array[j] = temp;
+          }
+       }
+     }
+     return array
+}
+// console.log(sort(letterArray));
+
+function removeDup(array) {
+  for (var i = 0; i < array.length; i++) {
+    if(array[i] === array[i + 1]){
+      delete array[i + 1];
+      }
+    }
+    return array;
+  }
+console.log(removeDup(sort(letterArray)));
 //
 // 4. Interview question from Amazon:
 // Determine if a list of integers forms an arithmetic sequence. For instance, the integers 1, 2, 3, 4, 5 form an arithmetic sequence because the differences between them are all the same, but the integers 1, 2, 4,8, 16 do not form an arithmetic sequence because the differences between them are not all the same. The input need not be sorted, so the integers 3, 2, 5, 1, 4 also form an arithmetic sequence.
 // Your task is to write a function that determines if a list of integers forms an arithmetic sequence.
+//susan's solution
+var integers = [1,2,3,4,5];
+
+function seq(array) {
+  for (var i = 0; i < array.length-2; i++){
+    if (array[i + 1] - array[i] === array[i+2]-array[i+1]) {
+      return true;
+    }
+    return false;
+  }
+}
+console.log(seq(integers));
