@@ -29,4 +29,4 @@ function lowerThan(arbNumber){
 }
 console.log(switchArray);
 }
-lowerThan(785);
+lowerThan(200);
