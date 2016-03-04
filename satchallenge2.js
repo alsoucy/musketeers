@@ -118,6 +118,7 @@ console.log(inSeq(origArray));
 var testArray = [9,5,8,6,7,1];
 // console.log(resortArray(testArray)); //1,3,5,6,7,9
 console.log(inSeq(testArray));
+
 // 3. Given a string which contains only lowercase letters, remove duplicate letters so that every letter appears once and only once.
 // You must make sure your result is arranged in alphabetical order.
 //
@@ -125,17 +126,57 @@ console.log(inSeq(testArray));
 // Given "bcabc"
 // Return "abc"
 // ascii codes for lowercase letters: 97-122
-var string = 'accdfkred';
-var newString = [];
-for (var i = 0; i < string.length; i++){
-  for(var j = i+1; j < string.length; j++ ){
-
-  }
-  if(string[i] !== string[j]){
-    newString.push(string[i]);
-  }
+var string = ['a','c','c','d','f','k','r','e','d'];
+var sortedString = [];
+function sortString(s) {
+  var tempvar = 0;
+  for(var i = 0; i < s.length-1; i++){
+    for(var j = i+1; j< s.length; j++){
+      if(s[i] > s[j]){
+        tempvar = s[i];
+        s[i] = s[j];
+        s[j] = tempvar;
+      }
+    }
+  } return s
 }
-console.log(newString);
+console.log(sortString(string));
+sortedString.push(sortString(string));
+console.log(sortedString);
+//function to see if element is in the array?
+//is element in array?
+var newArray = [];
+for(var i = 0; i < sortedString.length; i++){
+  if(newArray.indexOf(sortedString[i]) === -1){
+    newArray.push(sortedString[i]);
+  };
+}
+console.log(newArray);
+
+// function findDup(element){
+//   for(var i = 0; i < sortedString.length; i++){
+//     if(sortedString[i] === element){
+//       return true;
+//     }
+//   } return false;
+//  if (findDup(element) === false) {
+//   newArray.push(element);
+// }
+// }
+// findDup('a');
+// console.log(newArray);
+// var newString = [];
+// function killDup(string){
+// for (var i = 0; i < string.length; i++){
+//   for(var j = i+1; j < string.length; j++ ){
+//   }
+//   }
+//   if(string[i] !== string[j]){
+//     newString.push(string[i])
+// }
+// return newString;
+// }
+// console.log(killDup(string));
 
 //susan's solution
 var letterArray = ['b','c','a','b','c']
@@ -168,7 +209,7 @@ for(var i = 0; i <= array.length-2; i++) {
      }
      return array
 }
-// console.log(sort(letterArray));
+console.log(sort(letterArray));
 
 function removeDup(array) {
   for (var i = 0; i < array.length; i++) {
@@ -184,14 +225,14 @@ console.log(removeDup(sort(letterArray)));
 // Determine if a list of integers forms an arithmetic sequence. For instance, the integers 1, 2, 3, 4, 5 form an arithmetic sequence because the differences between them are all the same, but the integers 1, 2, 4,8, 16 do not form an arithmetic sequence because the differences between them are not all the same. The input need not be sorted, so the integers 3, 2, 5, 1, 4 also form an arithmetic sequence.
 // Your task is to write a function that determines if a list of integers forms an arithmetic sequence.
 //susan's solution
-var integers = [1,2,3,4,5];
-
-function seq(array) {
-  for (var i = 0; i < array.length-2; i++){
-    if (array[i + 1] - array[i] === array[i+2]-array[i+1]) {
-      return true;
-    }
-    return false;
-  }
-}
-console.log(seq(integers));
+// var integers = [1,2,3,4,5];
+//
+// function seq(array) {
+//   for (var i = 0; i < array.length-2; i++){
+//     if (array[i + 1] - array[i] === array[i+2]-array[i+1]) {
+//       return true;
+//     }
+//     return false;
+//   }
+// }
+// console.log(seq(integers));
